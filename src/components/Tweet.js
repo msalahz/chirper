@@ -5,6 +5,7 @@ import TiHeartOutline from 'react-icons/lib/ti/heart-outline'
 import TiHeartFullOutline from 'react-icons/lib/ti/heart-full-outline'
 import { object } from 'prop-types'
 import { formatTweet, formatDate } from '../utils/helpers'
+import { handleToggleTweet } from '../actions/tweets'
 
 class Tweet extends Component {
   static propTypes = {
@@ -26,7 +27,15 @@ class Tweet extends Component {
   handleLike = (e, id) => {
     e.preventDefault()
 
-    // TODO: Mark tweet as liked by current autheed user
+    const { dispatch, authedUser, tweet } = this.props
+
+    dispatch(
+      handleToggleTweet({
+        id,
+        authedUser,
+        hasLiked: tweet.hasLiked
+      })
+    )
   }
   render() {
     const { tweet } = this.props
