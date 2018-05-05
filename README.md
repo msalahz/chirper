@@ -1,4 +1,4 @@
-# Chirper Project : React Tweeter Clone
+# Chirper Project : React Twitter Clone
 
 The application include three pages:
 1. dashboard page `/`: It allow listing, liking & opening tweets.
