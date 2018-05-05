@@ -6,6 +6,7 @@ import { func, bool } from 'prop-types'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
 import TweetForm from './TweetForm'
+import TweetPage from './TweetPage'
 import Nav from './Nav'
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
               <Nav />
               <Route exact path="/" component={Dashboard} />
               <Route path="/new" component={TweetForm} />
+              <Route path="/tweet/:id" component={TweetPage} />
             </div>
           )}
         </Fragment>

@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { func, number, object } from 'prop-types'
+import { func, string, object } from 'prop-types'
 import { handleAddTweet } from '../actions/tweets'
 
 class TweetForm extends Component {
   static propTypes = {
-    id: number,
+    id: string,
     dispatch: func.isRequired,
-    history: object.isRequired
+    history: object
   }
 
   static defaultProps = {
-    id: null
+    id: null,
+    history: {}
   }
 
   state = {
